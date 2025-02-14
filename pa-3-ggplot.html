@@ -72,10 +72,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#groupwork-protocols" id="toc-groupwork-protocols" class="nav-link active" data-scroll-target="#groupwork-protocols">Groupwork Protocols</a>
+  <ul class="collapse">
+  <li><a href="#group-norms" id="toc-group-norms" class="nav-link" data-scroll-target="#group-norms">Group Norms</a></li>
+  </ul></li>
+  <li><a href="#getting-set-up" id="toc-getting-set-up" class="nav-link" data-scroll-target="#getting-set-up">Getting Set-up</a>
+  <ul class="collapse">
+  <li><a href="#step-1-install-the-palmerpenguins-package" id="toc-step-1-install-the-palmerpenguins-package" class="nav-link" data-scroll-target="#step-1-install-the-palmerpenguins-package">Step 1: Install the <code>palmerpenguins</code> Package</a></li>
+  <li><a href="#step-2-create-a-set-up-code-chunk" id="toc-step-2-create-a-set-up-code-chunk" class="nav-link" data-scroll-target="#step-2-create-a-set-up-code-chunk">Step 2: Create a Set-up Code Chunk</a></li>
+  <li><a href="#step-3-accessing-the-penguins-dataset" id="toc-step-3-accessing-the-penguins-dataset" class="nav-link" data-scroll-target="#step-3-accessing-the-penguins-dataset">Step 3: Accessing the <code>penguins</code> Dataset</a></li>
+  <li><a href="#step-4-get-to-know-the-data" id="toc-step-4-get-to-know-the-data" class="nav-link" data-scroll-target="#step-4-get-to-know-the-data">Step 4: Get to Know the Data</a></li>
+  </ul></li>
+  <li><a href="#making-graphics" id="toc-making-graphics" class="nav-link" data-scroll-target="#making-graphics">Making Graphics</a>
+  <ul class="collapse">
+  <li><a href="#step-5-barchart" id="toc-step-5-barchart" class="nav-link" data-scroll-target="#step-5-barchart">Step 5: Barchart</a></li>
+  <li><a href="#step-6-scatterplot" id="toc-step-6-scatterplot" class="nav-link" data-scroll-target="#step-6-scatterplot">Step 6: Scatterplot</a></li>
+  <li><a href="#step-7-adding-a-categorical-variable" id="toc-step-7-adding-a-categorical-variable" class="nav-link" data-scroll-target="#step-7-adding-a-categorical-variable">Step 7: Adding A Categorical Variable</a></li>
+  <li><a href="#step-8-adding-another-categorical-variable" id="toc-step-8-adding-another-categorical-variable" class="nav-link" data-scroll-target="#step-8-adding-another-categorical-variable">Step 8: Adding Another Categorical Variable</a></li>
+  </ul></li>
+  <li><a href="#canvas-quiz" id="toc-canvas-quiz" class="nav-link" data-scroll-target="#canvas-quiz">Canvas Quiz</a></li>
+  </ul>
+</nav>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -145,8 +171,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="step-3-accessing-the-penguins-dataset">Step 3: Accessing the <code>penguins</code> Dataset</h2>
 <p>I like to tangibly see the data set I will be working with so let’s pull the <code>penguins</code> data into the R environment. Run the code below and you should see the penguins data appear in the top right Environment tab.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loads relevant data from library</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <!-- Change roles (Developer becomes Coder)! -->
 </section>
@@ -165,6 +194,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="step-5-barchart">Step 5: Barchart</h2>
 <p>Use <code>ggplot2</code> to draw a barchart of different <code>species</code> included in the dataset.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creates barchart of species in the penguins dataset</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(</span>
@@ -173,6 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Penguin Species"</span>,</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Freqency"</span>) <span class="sc">+</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -186,6 +218,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="step-6-scatterplot">Step 6: Scatterplot</h2>
 <p>Use <code>ggplot2</code> to create a scatterplot of the relationship between the bill length (<code>bill_length_mm</code>) and bill depth (<code>bill_depth_mm</code>).</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creates scatterplot of penguins' bill length(mm) vs bill depth(mm)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(</span>
@@ -195,6 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Length (mm)"</span>,</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Bill Depth (mm)"</span>) <span class="sc">+</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).</code></pre>
@@ -213,6 +248,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- Change roles (Developer becomes Coder)! -->
 <p>Building off of the plot you made in Step 6, add an aesthetic to differentiate the species of the penguins in the scatterplot by color.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creates scatterplot of penguins' bill length(mm) vs bill depth(mm), with color mapped to species</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(</span>
@@ -223,6 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Length (mm)"</span>,</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Bill Depth (mm)"</span>) <span class="sc">+</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).</code></pre>
@@ -240,6 +278,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="step-8-adding-another-categorical-variable">Step 8: Adding Another Categorical Variable</h2>
 <p>Building off of the plot you made in Step 7, add the location of the penguins ( <code>island</code>) to your visualization. There may be more than one method to address this, however, one method will more easily allow you to address the questions below.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creates scatterplot of penguins' bill length(mm) vs bill depth(mm), with color mapped to island and shape mapped to species</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(</span>
@@ -251,6 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Length (mm)"</span>,</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Bill Depth (mm)"</span>) <span class="sc">+</span></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
 (`geom_point()`).</code></pre>

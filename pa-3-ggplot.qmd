@@ -6,6 +6,8 @@ editor: source
 execute: 
   echo: true
   error: true
+code-fold: true
+toc: true
 ---
 
 ```{r}
