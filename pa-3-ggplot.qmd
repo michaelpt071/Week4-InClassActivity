@@ -1,5 +1,6 @@
 ---
 title: "PA 3: Using Data Visualization to Find the Penguins"
+author: Michael Torrisi, 
 format: html
 editor: source
 execute: 
@@ -8,7 +9,9 @@ execute:
 ---
 
 ```{r}
-
+#| label: Load Required Packages
+library(tidyverse)
+library(palmerpenguins)
 ```
 
 Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.
