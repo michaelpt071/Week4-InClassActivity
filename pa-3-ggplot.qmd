@@ -10,6 +10,7 @@ execute:
 
 ```{r}
 #| label: Load Required Packages
+#| echo: false
 library(tidyverse)
 library(palmerpenguins)
 ```
@@ -133,6 +134,13 @@ Building off of the plot you made in Step 6, add an aesthetic to differentiate t
 ```{r}
 #| label: scatterplot-with-one-categorical-variable
 
+ggplot(data = penguins) +
+  geom_point(mapping = aes(
+    x = bill_length_mm, 
+    y = bill_depth_mm,
+     color = species
+  ))
+
 ```
 
 ## Step 8: Adding Another Categorical Variable
@@ -141,6 +149,14 @@ Building off of the plot you made in Step 7, add the location of the penguins ( 
 
 ```{r}
 #| label: scatterplot-with-two-categorical-variables
+
+ggplot(data = penguins) +
+  geom_point(mapping = aes(
+    x = bill_length_mm, 
+    y = bill_depth_mm,
+     color = species,
+    shape = island
+  ))
 
 ```
 
