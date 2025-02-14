@@ -4,3 +4,5 @@ PA3: Using Data Visualisation to Find the Penguins
 1. Test commit, loaded .qmd
 
 2. Completed document, rendered as .html
+
+3. added table of contents
