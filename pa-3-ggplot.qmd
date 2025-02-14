@@ -10,7 +10,7 @@ execute:
 
 ```{r}
 #| label: Load Required Packages
-#| echo: false
+#| include: false
 library(tidyverse)
 library(palmerpenguins)
 ```
@@ -81,8 +81,8 @@ For this activity, we will be exploring the `penguins` data from the `palmerpeng
 I like to tangibly see the data set I will be working with so let's pull the `penguins` data into the R environment. Run the code below and you should see the penguins data appear in the top right Environment tab.
 
 ```{r}
-#| label: load-data
-
+#| label: Load Data
+# Loads relevant data from library
 data(penguins)
 ```
 
@@ -105,11 +105,15 @@ In this section you will explore the `penguins` dataset by creating multiple typ
 Use `ggplot2` to draw a barchart of different `species` included in the dataset.
 
 ```{r}
-#| label: barchart
+#| label: Species Barchart
+# Creates barchart of species in the penguins dataset
 ggplot(data = penguins) +
   geom_bar(mapping = aes(
     x = species, 
-  ))
+  ))+
+  labs(x = "Penguin Species",
+       y = "Freqency") +
+  theme_light()
 ```
 
 ## Step 6: Scatterplot
@@ -117,12 +121,16 @@ ggplot(data = penguins) +
 Use `ggplot2` to create a scatterplot of the relationship between the bill length (`bill_length_mm`) and bill depth (`bill_depth_mm`).
 
 ```{r}
-#| label: scatterplot
+#| label: Bill Ratio Scatterplot
+# Creates scatterplot of penguins' bill length(mm) vs bill depth(mm)
 ggplot(data = penguins) +
   geom_point(mapping = aes(
     x = bill_length_mm, 
     y = bill_depth_mm
-  ))
+  ))+
+  labs(x = "Bill Length (mm)",
+       y = "Bill Depth (mm)") +
+  theme_light()
 ```
 
 ## Step 7: Adding A Categorical Variable
@@ -132,14 +140,17 @@ ggplot(data = penguins) +
 Building off of the plot you made in Step 6, add an aesthetic to differentiate the species of the penguins in the scatterplot by color.
 
 ```{r}
-#| label: scatterplot-with-one-categorical-variable
-
+#| label: Scatterplot with One Categorical Variable
+# Creates scatterplot of penguins' bill length(mm) vs bill depth(mm), with color mapped to species
 ggplot(data = penguins) +
   geom_point(mapping = aes(
     x = bill_length_mm, 
     y = bill_depth_mm,
      color = species
-  ))
+  )) +
+  labs(x = "Bill Length (mm)",
+       y = "Bill Depth (mm)") +
+  theme_light()
 
 ```
 
@@ -148,15 +159,18 @@ ggplot(data = penguins) +
 Building off of the plot you made in Step 7, add the location of the penguins ( `island`) to your visualization. There may be more than one method to address this, however, one method will more easily allow you to address the questions below.
 
 ```{r}
-#| label: scatterplot-with-two-categorical-variables
-
+#| label: Scatterplot with Two Categorical Variables
+# Creates scatterplot of penguins' bill length(mm) vs bill depth(mm), with color mapped to island and shape mapped to species
 ggplot(data = penguins) +
   geom_point(mapping = aes(
     x = bill_length_mm, 
     y = bill_depth_mm,
      shape = species,
     color = island
-  ))
+  )) +
+  labs(x = "Bill Length (mm)",
+       y = "Bill Depth (mm)") +
+  theme_light()
 
 ```
 
