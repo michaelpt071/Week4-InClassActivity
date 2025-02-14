@@ -154,8 +154,8 @@ ggplot(data = penguins) +
   geom_point(mapping = aes(
     x = bill_length_mm, 
     y = bill_depth_mm,
-     color = species,
-    shape = island
+     shape = species,
+    color = island
   ))
 
 ```
